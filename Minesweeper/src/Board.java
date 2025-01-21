@@ -98,7 +98,7 @@ public class Board{
             int randomWidth = rand.nextInt(board[randomLayer][randomDepth][randomHeight].length);
             if (board[randomLayer][randomDepth][randomHeight][randomWidth].isMine()){
                 i--; // decrement because this loop didn't find a place to put a mine
-            } else {
+            } else { // could do a different thing in addition to generating 100 boards to guarantee if throughout all 100 of those generations that there will still be a rectangle of 0s where you first dug
                 board[randomLayer][randomDepth][randomHeight][randomWidth].setMine(true);
             }
         }
@@ -138,7 +138,7 @@ public class Board{
             for (int depth = 0; depth < board[layer].length; depth++) {
                 for (int height = 0; height < board[layer][depth].length; height++){
                     for (int width = 0; width < board[layer][depth][height].length; width++){
-                        printedBoard.append(board[layer][depth][height][width].toExposedString() + " ");
+                        printedBoard.append(board[layer][depth][height][width].toExposedString()).append(" ");
                     }
                     printedBoard.append("   ");
                 }

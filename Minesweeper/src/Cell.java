@@ -71,9 +71,6 @@ public class Cell{
             return "\u001B[31m" + "[" + layer + height + depth + width + " " + getExposedStatus() + "]" + "\u001B[0m";
         } else if (getExposedStatus().equals("00")){
             return "\u001B[30m" + "[" + layer + height + depth + width + " " + getExposedStatus() + "]" + "\u001B[0m";
-        } else if (getExposedStatus().equals(" S")) {
-            setShowingAdjacencies(false);
-            return "\u001B[33m" + "[" + layer + height + depth + width + " " + getExposedStatus() + "]" + "\u001B[0m";
         }
         return "[" + layer + height + depth + width + " " + getExposedStatus() + "]";
     }
