@@ -89,7 +89,7 @@ public class Main {
                     return false;
                 }
             } else {
-                System.out.println("revealing adjacencies " + + layer + height + depth† + width);
+                System.out.println("revealing adjacencies " + + layer + height + depth + width);
                 // not sure why height and depth need to be swapped here, but it works and im too scared to try to fix it
                 board.showAdjacent(layer, depth, height, width);
             }
