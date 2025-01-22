@@ -1,5 +1,6 @@
-import java.util.Random;
+package minesweeper4d;
 
+import java.util.Random;
 public class Board{
 
     private int height;

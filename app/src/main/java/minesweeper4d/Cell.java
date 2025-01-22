@@ -1,3 +1,5 @@
+package minesweeper4d;
+
 public class Cell{
     Integer adjacentMines = 0;
     boolean isVisible = false;

@@ -1,12 +1,17 @@
+package minesweeper4d;
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static java.lang.Thread.sleep;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         PlayMP3 sound = new PlayMP3();
-        sound.playSound("explosion");
-        Thread.sleep(1000);
+//        sound.playSound("explosion");
+        sleep(1000);
         // gets the users wanted dimensions for the board
         System.out.print("Enter the 1d size (1≤x≤9): ");
         int width = scanner.nextInt();
@@ -35,14 +40,16 @@ public class Main {
             //call nextMove
             if (!nextMove(board)){
                 //plays the explosion sound to signify that you lost, and prints that you lost in ascii art to make it more impactful
-                sound.playSound("explosion");
                 System.out.println("__  __               __                   \n" +
                         "\\ \\/ /___  __  __   / /   ____  ________  \n" +
                         " \\  / __ \\/ / / /  / /   / __ \\/ ___/ _ \\ \n" +
                         " / / /_/ / /_/ /  / /___/ /_/ (__  )  __/ \n" +
                         "/_/\\____/\\__,_/  /_____/\\____/____/\\___(_)\n" +
                         "                                          ");
+                sound.playSound("explosion");
+                sleep(2000);
                 System.out.println(board.toExposedString());
+
                 return;
             }
             System.out.println(board);
